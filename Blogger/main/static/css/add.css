@@ -1,0 +1,16 @@
+/*** main ***/
+.myhero-background {
+    height: 70vh;
+    position: relative;
+}
+
+.myhero-blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+}
+
+.post-form {
+    row-gap: 1rem;
+}

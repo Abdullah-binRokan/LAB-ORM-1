@@ -2,15 +2,18 @@
 
 {% load static %}
 
-{% block title %}Add a New Post{% endblock %}
+{% block title %}Update Post{% endblock %}
+
+{% block style %}<link rel="stylesheet" href="{% static 'css/update.css' %}">{% endblock %}
 
 {% block content %}
-<div class="myhero-background-decoration width-100">
+<div class="myhero-background myhero-background-decoration width-100">
+    <div class="myhero-blur"></div>
     <div class="myhero-content-container container">
         <h1 class="pt-5">Update {{ post.title }}</h1>
         <form action="{% url 'main:update_view' post.id  %}" method="post" enctype="multipart/form-data">
             {% csrf_token %} 
-            <div class="row d-flex flex-column container">
+            <div class="post-form row d-flex flex-column container">
                 <input class="form-control col-lg-5 my-2" placeholder="Title" type="text" name="title" value="{{ post.title }}"/>
                 <textarea class="form-control col-lg-5 my-2" placeholder="Content" name="content">{{ post.content }}</textarea>
                 <!-- Category dropdown -->

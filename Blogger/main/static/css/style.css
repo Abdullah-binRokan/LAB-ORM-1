@@ -7,6 +7,7 @@ h1 {
     font-weight: 600;
 }
 
+
 /*** main ***/
 .myhero-background-decoration {
     background-image: url('../images/Pngtree_background2.jpg');
@@ -45,8 +46,23 @@ h1 {
     z-index: -1;
 }
 
+/*** cards ***/
+.card-img-home {
+    /* assign height to have same box sizes */
+    height: 250px;
+    /* maintain its aspect ratio while filling the element's entire content box */
+    object-fit: cover;
+}
 
 /*** footer ***/
 footer {
     background-image: radial-gradient(#4455ff, #3377ff);
+}
+
+
+/*** media queries ***/
+@media (min-width: 1024px) {
+    .myhero-content-container {
+        margin-left: 10vw;
+    }
 }

@@ -4,7 +4,7 @@ from .models import Post
 
 # Create your views here.
 def home_view(request: HttpRequest):
-    posts = Post.objects.all()
+    posts = Post.objects.filter(is_published = True).order_by("-id")
 
     return render(request, "main/index.html", {"posts": posts})
 
