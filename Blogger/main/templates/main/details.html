@@ -4,8 +4,29 @@
 
 {% block title %}Post Details{% endblock %}
 
+{% block style %}<link rel="stylesheet" href="{% static 'css/details.css' %}">{% endblock %}
 
 {% block content %}
+
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Deleting the post</h1>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete the post?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+          <a href="{% url 'main:delete_view' post.id %}"><button type="button" class="btn btn-danger rounded-3 p-2">Yes</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of modal -->
 
 <div class="container">
     <h1 class="pt-5">Post Details</h1>
@@ -25,7 +46,10 @@
                {% endif %}
            </h6>
            <a href="{% url 'main:update_view' post.id %}" class="btn col-lg-5 my-2 btn-primary rounded-3 p-2">Update post</a>
-           <a href="{% url 'main:delete_view' post.id %}" class="btn col-lg-5 my-2 btn-warning rounded-3 p-2">Delete post</a>
+           <!-- Button trigger modal -->
+            <button type="button" class="btn col-lg-5 my-2 btn-danger rounded-3 p-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Delete post
+            </button>
            </div>
         </div>  
     </div>

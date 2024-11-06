@@ -1,0 +1,24 @@
+/*** main ***/
+.card-img-top {
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+
+/*** modal ***/
+.modal-header {
+    background-image: radial-gradient(#4455ff, #3377ff);
+}
+
+.modal-header > * {
+    color: #fff;
+}
+
+.modal-footer button {
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.btn-warning {
+    color: #fff;
+}
